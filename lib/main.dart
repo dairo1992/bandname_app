@@ -1,4 +1,3 @@
-// @dart=2.9
 import 'package:bandname_app/pages/home.dart';
 import 'package:bandname_app/pages/status.dart';
 import 'package:bandname_app/services/socket_services.dart';
