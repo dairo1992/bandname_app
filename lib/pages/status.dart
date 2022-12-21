@@ -10,13 +10,20 @@ class StatusPage extends StatelessWidget {
     final socketService = Provider.of<SocketService>(context);
     return Scaffold(
         body: Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        Container(
-          alignment: Alignment.center,
-          child: Text('Server status: ${socketService.serverStatus}'),
-        )
-      ],
-    ));
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Container(
+              alignment: Alignment.center,
+              child: Text('Server status: ${socketService.serverStatus}'),
+            )
+          ],
+        ),
+        floatingActionButton: FloatingActionButton(
+          onPressed: () {
+            socketService.socket.emit(
+                'emitir-mensaje', {'nombre': 'Wen', 'mensaje': 'Hola wen'});
+          },
+          child: Icon(Icons.send_sharp),
+        ));
   }
 }

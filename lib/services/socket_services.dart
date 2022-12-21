@@ -9,6 +9,8 @@ class SocketService with ChangeNotifier {
 
   ServerStatus get serverStatus => _serverStatus;
 
+  IO.Socket get socket => _socket;
+
   SocketService() {
     _initConfig();
   }
